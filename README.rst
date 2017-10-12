@@ -52,7 +52,8 @@ Add djangocms_slick_slider's URL patterns:
 Settings
 --------
 
-``SLICK_SLIDER_VERSION``
+SLICK_SLIDER_VERSION
+^^^^^^^^^^^^^^^^^^^^
 
 Version of Slick Slider that should be used. Keep in mind, that this version
 needs to be in `static/vendor/` folder with the appropriate folder name.
