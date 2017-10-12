@@ -47,3 +47,6 @@ output/*/index.html
 docs/_build
 
 example/media
+
+*.db
+*/*.db
