@@ -1,7 +1,39 @@
-{% load cms_tags %}
+{% load static %}
 
-<div class="plugin parent">
+{% load cms_tags %}
+{% load sekizai_tags %}
+{% load l10n %}
+
+{% load utils %}
+
+{% addtoblock 'css' %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/slick-'|add:settings.SLICK_SLIDER_VERSION|add:'/slick/slick.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/slick-'|add:settings.SLICK_SLIDER_VERSION|add:'/slick/slick-theme.css' %}">
+
+    <style type="text/css">
+        .slick-slide img {
+            width: 99%;
+            margin: 0 auto; /* it centers any block level element */
+        }
+    </style>
+
+{% endaddtoblock %}
+
+<div class="plugin parent slider-container">
     {% for plugin in instance.child_plugin_instances %}
         {% render_plugin plugin %}
     {% endfor %}
 </div>
+
+
+{% addtoblock 'js' %}
+
+    <script type="text/javascript" src="{% static 'vendor/slick-'|add:settings.SLICK_SLIDER_VERSION|add:'/slick/slick.min.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.slider-container').slick({{ instance.settings|jsonify }});
+        });
+    </script>
+
+{% endaddtoblock %}

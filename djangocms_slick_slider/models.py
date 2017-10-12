@@ -9,6 +9,8 @@ from filer.fields.image import FilerImageField
 
 from cms.models.pluginmodel import CMSPlugin
 
+from .settings import SLICK_SLICKER_DEFAULT_OPTIONS
+
 if 'postgre' in connection.vendor:
     from django.contrib.postgres.fields import JSONField
 else:
@@ -29,7 +31,8 @@ class SlickSlider(CMSPlugin):
         max_length=255)
 
     settings = JSONField(
-        verbose_name=_('Slick settings'))
+        verbose_name=_('Slick settings'),
+        default=SLICK_SLICKER_DEFAULT_OPTIONS)
 
     def __str__(self):
         """
