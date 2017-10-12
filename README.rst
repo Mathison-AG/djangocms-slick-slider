@@ -64,6 +64,21 @@ mentioned folder and change the version in the settings.
 default: ``1.8.0``
 
 
+SLICK_SLICKER_DEFAULT_OPTIONS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+ToDo
+
+SLICK_SLIDER_ACE_THEME
+^^^^^^^^^^^^^^^^^^^^^^
+
+ToDo
+
+SLICK_SLIDER_ACE_MODE
+^^^^^^^^^^^^^^^^^^^^^
+
+ToDo
+
 Features
 --------
 
