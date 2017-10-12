@@ -64,6 +64,9 @@ Does the code actually work?
     (myenv) $ pip install tox
     (myenv) $ tox
 
+If you have issues with different python versions, please take a look at
+these docs: https://www.holger-peters.de/using-pyenv-and-tox.html
+
 Credits
 -------
 
