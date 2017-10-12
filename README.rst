@@ -83,6 +83,8 @@ Features
 --------
 
 * Add a Slick Slider to any page via Django CMS Plugin
+* Change/set Slick options via ``JSONField``
+* Set some styling options such as color
 
 Running Tests
 -------------

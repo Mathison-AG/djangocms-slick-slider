@@ -41,7 +41,7 @@ class SlickSliderPlugin(SlickerSliderAceMixin, CMSPluginBase):
 @plugin_pool.register_plugin
 class SlickSliderImagePlugin(CMSPluginBase):
     render_template = 'djangocms_slick_slider/image.html'
-    name = _('Slick Slider Image')
+    name = _('Slider Image')
     model = SlickSliderImage
     require_parent = True
     parent_classes = ['SlickSliderPlugin', ]

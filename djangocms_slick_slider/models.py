@@ -34,11 +34,18 @@ class SlickSlider(CMSPlugin):
         verbose_name=_('Slick settings'),
         default=SLICK_SLICKER_DEFAULT_OPTIONS)
 
+    arrow_color = models.CharField(
+        verbose_name=_('Arrow color'),
+        max_length=255,
+        default="#ddd",
+        help_text=_('Define the color of slider arrows here. All CSS '
+                    'color values work (e.g. #efefef)'))
+
     def __str__(self):
         """
         String representation of SlickSlider class.
         """
-        return "Slick Slider: {title}".format(title=self.title)
+        return "{title}".format(title=self.title)
 
 
 @python_2_unicode_compatible
@@ -54,9 +61,13 @@ class SlickSliderImage(CMSPlugin):
         verbose_name=_('Image link'),
         null=True, blank=True)
 
+    class Meta:
+        verbose_name = _('Slider Image')
+        verbose_name_plural = _('Slider Images')
+
     def __str__(self):
         """
         String representation of SlickSliderImage class.
         """
-        return "Slick Slider Image: {filename}".format(
-            filename=self.image.name)
+        return "{filename}".format(
+            filename=self.image.original_filename)
