@@ -65,7 +65,7 @@ default: `1.8.0`
 Features
 --------
 
-* TODO
+* Add a Slick Slider to any page via Django CMS Plugin
 
 Running Tests
 -------------
