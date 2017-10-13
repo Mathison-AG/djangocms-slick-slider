@@ -62,6 +62,24 @@ Add it to your `INSTALLED_APPS`:
     )
 
 
+Example project
+---------------
+
+You can quickly get an example project up to test / develop the plugin.
+
+If you have virtualenvwrapper installed::
+
+    git clone https://github.com/oesah/djangocms_slick_slider.git
+    cd example
+    mkvirtualenv my_project_env
+    pip install -r requirements.txt
+    python manage.py migrate
+    python manage.py createsuperuser
+    python manage.py runserver
+
+Afterwards, you can login and create a first page on which you can
+use the ``Slick Slider`` plugin.
+
 
 Settings
 --------
