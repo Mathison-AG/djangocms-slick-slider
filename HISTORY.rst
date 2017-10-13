@@ -3,6 +3,20 @@
 History
 -------
 
+0.2.0 (2017-10-13)
+++++++++++++++++++
+
+* major database change
+* fixed many bugs
+* you need to completey delete the old db and use the new one
+
+
+0.1.4 (2017-10-13)
+++++++++++++++++++
+
+* changed structure of settings
+
+
 0.1.2 (2017-10-13)
 ++++++++++++++++++
 

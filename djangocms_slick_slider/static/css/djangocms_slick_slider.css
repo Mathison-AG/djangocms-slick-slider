@@ -1,0 +1,12 @@
+.slider-caption-text{
+  background: rgba(255, 255, 255, .8);
+  position: absolute;
+  bottom: 10%;
+  margin-left: 2%;
+  padding: 15px;
+  max-width: 60vw;
+}
+
+.slider-caption-text > p{
+  font-size: 1.5rem;
+}

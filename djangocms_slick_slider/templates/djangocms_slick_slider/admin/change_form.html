@@ -8,7 +8,7 @@
 <script>
 django.jQuery(function () {
     // ace editor cannot be attached directly to a textarea
-    var textarea = django.jQuery('textarea').css('display', 'none');
+    var textarea = django.jQuery('#id_settings').css('display', 'none');
     var settings = textarea.data();
     var div = django.jQuery('<div>', {
         position: 'absolute',

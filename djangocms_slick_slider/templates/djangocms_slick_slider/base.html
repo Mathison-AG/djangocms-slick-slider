@@ -3,6 +3,7 @@
 {% load cms_tags %}
 {% load sekizai_tags %}
 {% load l10n %}
+{% load thumbnail %}
 
 {% load djangocms_slick_slider_utils %}
 
@@ -10,13 +11,14 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'vendor/slick-'|add:settings.SLICK_SLIDER_VERSION|add:'/slick/slick.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'vendor/slick-'|add:settings.SLICK_SLIDER_VERSION|add:'/slick/slick-theme.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/djangocms_slick_slider.css' %}">
 
     <style type="text/css">
         .slick-prev:before,
         .slick-next:before {
             color: {{ instance.arrow_color }}!important;
         }
-        .slick-slide img {
+        .single-image img {
             width: 99%;
             margin: 0 auto; /* it centers any block level element */
         }
@@ -24,20 +26,28 @@
 
 {% endaddtoblock %}
 
-
-<div class="plugin parent slider-container">
-    {% for plugin in instance.child_plugin_instances %}
-        {% render_plugin plugin %}
-    {% endfor %}
+<div id="slider-wrapper">
+    <div class="image-slider">
+        {% for image in images %}
+        <div class="single-image">
+            {% thumbnail image.image child_width crop=False upscale=True as thumb %}
+            <img data-lazy="{{ thumb.url }}" class="img-responsive">
+            {% if image.caption_text %}
+                <div class="slider-caption-text">
+                {{image.caption_text|linebreaks}}
+                </div>
+            {% endif %}
+            </div>
+        {% endfor %}
+    </div>
 </div>
-
 
 {% addtoblock 'js' %}
 
-    <script type="text/javascript" src="{% static 'vendor/slick-'|add:settings.SLICK_SLIDER_VERSION|add:'/slick/slick.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/slick-'|add:settings.SLICK_SLIDER_VERSION|add:'/slick/slick.js' %}"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            $('.slider-container').slick({{ instance.settings|jsonify }});
+            $('.image-slider').slick({{ instance.settings|jsonify }});
         });
     </script>
 

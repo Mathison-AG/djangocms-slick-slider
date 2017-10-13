@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
+from django.contrib import admin
 from django.db import models
 from django.forms import Textarea
 
-from .settings import SLICK_SLIDER_ACE_THEME, SLICK_SLIDER_ACE_MODE
+from .models import SlickSliderImage
+from .settings import get_setting
+
+admin.site.register(SlickSliderImage)
 
 
 class SlickerSliderAceMixin:
@@ -10,8 +14,8 @@ class SlickerSliderAceMixin:
     text_area_attrs = {
         'rows': 20,
         'data-editor': True,
-        'data-mode': SLICK_SLIDER_ACE_THEME,
-        'data-theme': SLICK_SLIDER_ACE_MODE,
+        'data-mode': get_setting('SLICK_SLIDER_ACE_THEME'),
+        'data-theme': get_setting('SLICK_SLIDER_ACE_MODE'),
     }
 
     formfield_overrides = {
