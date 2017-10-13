@@ -4,7 +4,7 @@
 {% load sekizai_tags %}
 {% load l10n %}
 
-{% load utils %}
+{% load djangocms_slick_slider_utils %}
 
 {% addtoblock 'css' %}
 
@@ -23,6 +23,7 @@
     </style>
 
 {% endaddtoblock %}
+
 
 <div class="plugin parent slider-container">
     {% for plugin in instance.child_plugin_instances %}

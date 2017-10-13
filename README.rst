@@ -1,5 +1,5 @@
 =============================
-djangocms_slick_slider
+Django CMS Slick Slider Plugin
 =============================
 
 .. image:: https://badge.fury.io/py/djangocms-slick-slider.svg
@@ -11,7 +11,33 @@ djangocms_slick_slider
 .. image:: https://codecov.io/gh/oesah/djangocms-slick-slider/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/oesah/djangocms-slick-slider
 
-A Django CMS Slider Plugin with Slick
+A Django CMS Slider Plugin with `Slick Slider <http://kenwheeler.github.io/slick/>`_.
+
+Features
+--------
+
+* Add a Slick Slider to any page via Django CMS Plugin
+* Change/set Slick options via ``JSONField``
+* Set some styling options such as color
+
+**CMS**
+
+.. image:: docs/media/admin.png
+   :alt: alternate text
+   :align: right
+
+
+**Admin Form**
+
+.. image:: docs/media/admin_form.png
+   :alt: alternate text
+   :align: right
+
+**Output**
+
+.. image:: docs/media/slider.png
+   :alt: alternate text
+   :align: right
 
 Documentation
 -------------
@@ -35,18 +61,6 @@ Add it to your `INSTALLED_APPS`:
         ...
     )
 
-Add djangocms_slick_slider's URL patterns:
-
-.. code-block:: python
-
-    from djangocms_slick_slider import urls as djangocms_slick_slider_urls
-
-
-    urlpatterns = [
-        ...
-        url(r'^', include(djangocms_slick_slider_urls)),
-        ...
-    ]
 
 
 Settings
@@ -79,13 +93,6 @@ SLICK_SLIDER_ACE_MODE
 
 ToDo
 
-Features
---------
-
-* Add a Slick Slider to any page via Django CMS Plugin
-* Change/set Slick options via ``JSONField``
-* Set some styling options such as color
-
 Running Tests
 -------------
 
@@ -107,6 +114,17 @@ Tools used in rendering this package:
 
 *  Cookiecutter_
 *  `cookiecutter-djangopackage`_
+*  `Slick Slider`_
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`cookiecutter-djangopackage`: https://github.com/pydanny/cookiecutter-djangopackage
+.. _`Slick Slider`: http://kenwheeler.github.io/slick/
+
+
+ToDos
+-----
+
+* make slider respect the order of ``SlickSliderImage`` Plugins
+* add more styling options to plugin
+* translations
+
