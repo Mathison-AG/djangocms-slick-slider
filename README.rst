@@ -8,8 +8,8 @@ Django CMS Slick Slider Plugin
 .. image:: https://travis-ci.org/oesah/djangocms-slick-slider.svg?branch=master
     :target: https://travis-ci.org/oesah/djangocms-slick-slider
 
-.. image:: https://codecov.io/gh/oesah/djangocms-slick-slider/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/oesah/djangocms-slick-slider
+.. image:: https://codecov.io/gh/oesah/djangocms_slick_slider/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/oesah/djangocms_slick_slider
 
 A Django CMS Slider Plugin with `Slick Slider <http://kenwheeler.github.io/slick/>`_.
 
