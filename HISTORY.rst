@@ -3,6 +3,12 @@
 History
 -------
 
+0.2.2 (2017-10-13)
+++++++++++++++++++
+
+* bug fixes that caused whitenoise to crash due to relative paths
+
+
 0.2.1 (2017-10-13)
 ++++++++++++++++++
 
