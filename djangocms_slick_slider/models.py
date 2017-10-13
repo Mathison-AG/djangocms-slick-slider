@@ -1,24 +1,15 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import models, connection
+from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
 from cms.models.pluginmodel import CMSPlugin
 from filer.fields.image import FilerImageField
-from adminsortable.models import Sortable
+from jsonfield import JSONField
 
 from .settings import get_setting
-
-if 'postgre' in connection.vendor:
-    from django.contrib.postgres.fields import JSONField
-else:
-    try:
-        from jsonfield import JSONField
-    except ImportError:
-        raise Exception('You need to have "jsonfield" installed: pip install '
-                        'jsonfield')
 
 
 @python_2_unicode_compatible

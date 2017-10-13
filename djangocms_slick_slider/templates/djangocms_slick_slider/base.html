@@ -31,7 +31,7 @@
         {% for image in images %}
         <div class="single-image">
             {% thumbnail image.image child_width crop=False upscale=True as thumb %}
-            <img data-lazy="{{ thumb.url }}" class="img-responsive">
+            <img data-lazy="{{ thumb.url }}">
             {% if image.caption_text %}
                 <div class="slider-caption-text">
                 {{image.caption_text|linebreaks}}

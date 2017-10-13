@@ -3,6 +3,12 @@
 History
 -------
 
+0.2.1 (2017-10-13)
+++++++++++++++++++
+
+* bug fixes that cause the slider not to show up
+* better python 3 compatibility
+
 0.2.0 (2017-10-13)
 ++++++++++++++++++
 
