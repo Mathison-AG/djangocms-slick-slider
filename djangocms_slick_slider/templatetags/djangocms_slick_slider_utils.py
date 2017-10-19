@@ -6,5 +6,8 @@ register = template.Library()
 
 
 @register.filter
-def jsonify(dictionary):
-    return mark_safe(json.dumps(dictionary, sort_keys=True, indent=4))
+def jsonify(dictionary, safe=True):
+    dump = json.dumps(dictionary, sort_keys=True, indent=4)
+    if safe:
+        return mark_safe(dump)
+    return dump

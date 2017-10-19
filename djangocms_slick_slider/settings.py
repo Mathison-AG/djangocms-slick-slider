@@ -16,16 +16,14 @@ def get_setting(name):
 
         'SLICK_SLICKER_DEFAULT_OPTIONS': getattr(
             settings, 'SLICK_SLICKER_DEFAULT_OPTIONS',
-            jsonify(
-                {
-                    'dots': True,
-                    'slidesToShow': 4,
-                    'mobileFirst': False,
-                    'slidesToScroll': 4,
-                    'autoplay': True,
-                    'autoplaySpeed': 1200
-                }
-            )
+            {
+                'dots': True,
+                'slidesToShow': 4,
+                'mobileFirst': False,
+                'slidesToScroll': 4,
+                'autoplay': True,
+                'autoplaySpeed': 1200
+            }
         ),
         'SLICK_SLIDER_ACE_THEME': getattr(
             settings, 'SLICK_SLIDER_ACE_THEME', 'json'),

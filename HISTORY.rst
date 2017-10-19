@@ -3,6 +3,12 @@
 History
 -------
 
+0.2.4 (2017-10-13)
+++++++++++++++++++
+
+* fixed jsonfield default error due to encoding
+
+
 0.2.2 (2017-10-13)
 ++++++++++++++++++
 
