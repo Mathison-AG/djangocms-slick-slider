@@ -4,6 +4,17 @@ from __future__ import absolute_import, unicode_literals
 from .templatetags.djangocms_slick_slider_utils import jsonify
 
 
+SLIDER_DEFAULT = jsonify(
+    {
+        'dots': True,
+        'slidesToShow': 4,
+        'mobileFirst': False,
+        'slidesToScroll': 4,
+        'autoplay': True,
+        'autoplaySpeed': 1200
+    }, safe=False)
+
+
 def get_setting(name):
     """
     Return the setting corresponding to the `name` given.
@@ -11,25 +22,17 @@ def get_setting(name):
     from django.conf import settings
 
     default = {
-        'SLICK_SLIDER_VERSION': getattr(
-            settings, 'SLICK_SLIDER_VERSION', '1.8.0'),
+        'SLICK_SLIDER_VERSION':
+            getattr(settings, 'SLICK_SLIDER_VERSION', '1.8.0'),
 
-        'SLICK_SLICKER_DEFAULT_OPTIONS': getattr(
-            settings, 'SLICK_SLICKER_DEFAULT_OPTIONS',
-            {
-                'dots': True,
-                'slidesToShow': 4,
-                'mobileFirst': False,
-                'slidesToScroll': 4,
-                'autoplay': True,
-                'autoplaySpeed': 1200
-            }
-        ),
-        'SLICK_SLIDER_ACE_THEME': getattr(
-            settings, 'SLICK_SLIDER_ACE_THEME', 'json'),
+        'SLICK_SLICKER_DEFAULT_OPTIONS':
+            getattr(settings, 'SLICK_SLICKER_DEFAULT_OPTIONS', SLIDER_DEFAULT),
 
-        'SLICK_SLIDER_ACE_MODE': getattr(
-            settings, 'SLICK_SLIDER_ACE_MODE', 'github'),
+        'SLICK_SLIDER_ACE_THEME':
+            getattr(settings, 'SLICK_SLIDER_ACE_THEME', 'json'),
+
+        'SLICK_SLIDER_ACE_MODE':
+            getattr(settings, 'SLICK_SLIDER_ACE_MODE', 'github'),
 
     }
     return default[name]
