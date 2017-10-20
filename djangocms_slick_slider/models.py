@@ -17,20 +17,31 @@ class SlickSlider(CMSPlugin):
     """
     Main Plugin Model for the slider.
     """
+    class Meta:
+        verbose_name = _('slick slider')
+        verbose_name_plural = _('slick sliders')
+
     title = models.CharField(
         verbose_name=_('slider title'),
         max_length=255)
 
     settings = JSONField(
         verbose_name=_('slick settings'),
-        default=get_setting('SLICK_SLICKER_DEFAULT_OPTIONS'))
+        default=get_setting('SLICK_SLICKER_DEFAULT_OPTIONS'),
+        help_text=_(
+            'Check <a href="http://kenwheeler.github.io/slick/" '
+            'target="_blank">'
+            'Slick Documentation</a> for possible settings '
+            '<br>'
+            'Use JSON format and check the errors in the editor<br>'
+            'You can also use online JSON validators'))
 
     arrow_color = models.CharField(
         verbose_name=_('arrow color'),
         max_length=255,
         default="#ddd",
         help_text=_('Define the color of slider arrows here. All CSS '
-                    'color values work (e.g. #efefef)'))
+                    'color values work (e.g. #efefef).'))
 
     def copy_relations(self, oldinstance):
         for image in oldinstance.images.all():
