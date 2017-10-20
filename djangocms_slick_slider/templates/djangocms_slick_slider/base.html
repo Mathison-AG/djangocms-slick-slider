@@ -9,8 +9,8 @@
 
 {% addtoblock 'css' %}
 
-    <link rel="stylesheet" type="text/css" href="{% static 'slick-'|add:settings.SLICK_SLIDER_VERSION|add:'/slick/slick.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'slick-'|add:settings.SLICK_SLIDER_VERSION|add:'/slick/slick-theme.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'slick-'|add:settings.SLICK_SLIDER_VERSION|add:'/slick.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'slick-'|add:settings.SLICK_SLIDER_VERSION|add:'/slick-theme.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/djangocms_slick_slider.css' %}">
 
     <style type="text/css">
@@ -44,7 +44,7 @@
 
 {% addtoblock 'js' %}
 
-    <script type="text/javascript" src="{% static 'slick-'|add:settings.SLICK_SLIDER_VERSION|add:'/slick/slick.js' %}"></script>
+    <script type="text/javascript" src="{% static 'slick-'|add:settings.SLICK_SLIDER_VERSION|add:'/slick.js' %}"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $('.image-slider').slick({{ instance.settings|jsonify }});
