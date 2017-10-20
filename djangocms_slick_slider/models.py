@@ -44,6 +44,10 @@ class SlickSlider(CMSPlugin):
                     'color values work (e.g. #efefef).'))
 
     def copy_relations(self, oldinstance):
+        """
+        Take an instance and copy the images of that instance to this
+        instance.
+        """
         for image in oldinstance.images.all():
             image.pk = None
             image.slider = self
@@ -91,10 +95,4 @@ class SlickSliderImage(models.Model):
         """
         String representation of SlickSliderImage class.
         """
-        if self.caption_text:
-            return self.caption_text
-        if self.image.label:
-            return self.image.label
-        else:
-            return "{filename}".format(
-                filename=self.image.original_filename)
+        return "{filename}".format(filename=self.image.original_filename)
