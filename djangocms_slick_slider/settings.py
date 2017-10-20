@@ -4,6 +4,8 @@ from __future__ import absolute_import, unicode_literals
 from .templatetags.djangocms_slick_slider_utils import jsonify
 
 
+# these are the default settings for the slider
+# change to your needs, if you like to
 SLIDER_DEFAULT = jsonify(
     {
         'dots': True,
@@ -12,7 +14,8 @@ SLIDER_DEFAULT = jsonify(
         'slidesToScroll': 1,
         'autoplay': True,
         'autoplaySpeed': 1500
-    }, safe=False)
+    },
+    safe=False)
 
 
 def get_setting(name):

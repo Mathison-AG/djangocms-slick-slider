@@ -140,9 +140,6 @@ INSTALLED_APPS = (
     'djangocms_googlemap',
     'djangocms_video',
     'djangocms_slick_slider',
-
-    # dev tools
-    'django_extensions',
 )
 
 LANGUAGES = (

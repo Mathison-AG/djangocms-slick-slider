@@ -44,7 +44,7 @@ class SlickSliderPlugin(SlickerSliderAceMixin, CMSPluginBase):
         # define context vars
         images = instance.images.all()
         child_width = get_slider_image_dimensions(
-            instance.settings['slidesToShow'])
+            4)
 
         context.update({
             'images': images,
