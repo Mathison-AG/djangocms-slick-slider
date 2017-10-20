@@ -9,7 +9,7 @@ from cms.plugin_pool import plugin_pool
 
 from .admin import SlickerSliderAceMixin
 from .models import SlickSlider, SlickSliderImage
-from .settings import get_setting
+from .helpers import get_slider_image_dimensions
 
 
 class SlickSliderImageInline(admin.TabularInline):
@@ -19,6 +19,18 @@ class SlickSliderImageInline(admin.TabularInline):
 
 @plugin_pool.register_plugin
 class SlickSliderPlugin(SlickerSliderAceMixin, CMSPluginBase):
+    """
+    The main Slick Slider Plugin. Here, we can define various settings
+    and behavior of the plugin.
+
+    This Plugin adds a Slick Slider Plugin to Django CMS. You can add
+    images as inline objects. The images will be rendered as thumbnails.
+
+
+    You can define `SLICK_SLIDER_CONTAINER_WIDTH` to change the behaviors.
+    Check :class:`helpers.get_slider_image_dimensions` for more information.
+    """
+
     model = SlickSlider
     name = _('Slick Slider')
     render_template = 'djangocms_slick_slider/base.html'
@@ -28,20 +40,14 @@ class SlickSliderPlugin(SlickerSliderAceMixin, CMSPluginBase):
     def render(self, context, instance, placeholder):
         context = super(SlickSliderPlugin, self).render(
             context, instance, placeholder)
+
+        # define context vars
         images = instance.images.all()
+        child_width = get_slider_image_dimensions(
+            instance.settings['slidesToShow'])
+
         context.update({
             'images': images,
-            'settings': self.get_settings(),
-            'child_width': '{w}x{w}'.format(w=(
-                int((1200 / (instance.settings['slidesToShow'])) * 1.5)
-            ))
-        })
-        return context
+            'child_width': child_width})
 
-    def get_settings(self):
-        """
-        Constrcut and return settings dictionary.
-        """
-        settings = {}
-        settings['SLICK_SLIDER_VERSION'] = get_setting('SLICK_SLIDER_VERSION')
-        return settings
+        return context

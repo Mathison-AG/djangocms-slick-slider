@@ -28,16 +28,22 @@
 
 <div id="slider-wrapper">
     <div class="image-slider">
+        {# Loop over images we added to context #}
         {% for image in images %}
         <div class="single-image">
+            {# Create image thumbnail, check link #}
             {% thumbnail image.image child_width crop=False upscale=True as thumb %}
+            {% if image.link %}<a href="{{ image.link }}" target="{{ image.link_target|yesno:"_blank," }}">{% endif %}
             <img data-lazy="{{ thumb.url }}">
+            {% if image.link %}</a>{% endif %}
+            
+            {# Add caption, if exists #}
             {% if image.caption_text %}
                 <div class="slider-caption-text">
                 {{image.caption_text|linebreaks}}
                 </div>
             {% endif %}
-            </div>
+        </div>
         {% endfor %}
     </div>
 </div>

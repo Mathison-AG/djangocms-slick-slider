@@ -56,8 +56,7 @@ class SlickSliderImage(models.Model):
 
     slider = models.ForeignKey(
         SlickSlider,
-        related_name="images"
-    )
+        related_name="images")
 
     image = FilerImageField(
         verbose_name=_('slider Image'),
@@ -67,11 +66,15 @@ class SlickSliderImage(models.Model):
         verbose_name=_('image link'),
         null=True, blank=True)
 
+    link_target = models.BooleanField(
+        verbose_name=_('image link target'),
+        help_text=_('open link in new window'),
+        default=True)
+
     caption_text = models.TextField(
         _('caption text'),
         null=True,
-        blank=True,
-    )
+        blank=True)
 
     def __str__(self):
         """

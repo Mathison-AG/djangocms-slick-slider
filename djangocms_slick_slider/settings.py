@@ -7,11 +7,11 @@ from .templatetags.djangocms_slick_slider_utils import jsonify
 SLIDER_DEFAULT = jsonify(
     {
         'dots': True,
-        'slidesToShow': 4,
+        'slidesToShow': 2,
         'mobileFirst': False,
-        'slidesToScroll': 4,
+        'slidesToScroll': 1,
         'autoplay': True,
-        'autoplaySpeed': 1200
+        'autoplaySpeed': 1500
     }, safe=False)
 
 
@@ -22,9 +22,6 @@ def get_setting(name):
     from django.conf import settings
 
     default = {
-        'SLICK_SLIDER_VERSION':
-            getattr(settings, 'SLICK_SLIDER_VERSION', '1.8.0'),
-
         'SLICK_SLICKER_DEFAULT_OPTIONS':
             getattr(settings, 'SLICK_SLICKER_DEFAULT_OPTIONS', SLIDER_DEFAULT),
 
@@ -34,5 +31,7 @@ def get_setting(name):
         'SLICK_SLIDER_ACE_MODE':
             getattr(settings, 'SLICK_SLIDER_ACE_MODE', 'github'),
 
+        'SLICK_SLIDER_CONTAINER_WIDTH':
+            getattr(settings, 'SLICK_SLIDER_CONTAINER_WIDTH', 1200)
     }
     return default[name]
