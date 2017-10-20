@@ -30,5 +30,6 @@ django-sekizai>=0.9
 six
 
 djangocms_helper
+django_coverage_plugin
 
 jsonfield

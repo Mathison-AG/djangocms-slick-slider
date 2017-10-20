@@ -1,5 +1,7 @@
 [run]
 branch = true
+plugins =
+    django_coverage_plugin
 
 [report]
 omit =

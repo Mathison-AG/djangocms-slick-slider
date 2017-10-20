@@ -30,7 +30,6 @@ class SlickSliderPlugin(SlickerSliderAceMixin, CMSPluginBase):
     You can define `SLICK_SLIDER_CONTAINER_WIDTH` to change the behaviors.
     Check :class:`helpers.get_slider_image_dimensions` for more information.
     """
-
     model = SlickSlider
     name = _('Slick Slider')
     render_template = 'djangocms_slick_slider/base.html'

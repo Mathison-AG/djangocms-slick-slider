@@ -1,37 +1,44 @@
-from django.test import TestCase
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+from djangocms_helper.base_test import BaseTestCase
 from django.test.client import RequestFactory
+
 
 from cms.api import add_plugin
 from cms.models import Placeholder
 from cms.plugin_rendering import ContentRenderer
 
 from djangocms_slick_slider.cms_plugins import SlickSliderPlugin
-from djangocms_slick_slider.models import SlickSlider
+
+from ._factories import SliderImageFactory, SliderFactory
 
 
-class SlickSliderPluginTests(TestCase):
+class SlickSliderPluginTests(BaseTestCase):
 
-    def test_plugin_context(self):
-        placeholder = Placeholder.objects.create(slot='test')
-        model_instance = add_plugin(
-            placeholder,
-            SlickSliderPlugin,
-            'de',
-        )
-        plugin_instance = model_instance.get_plugin_class_instance()
-        context = plugin_instance.render(
-            {},
-            model_instance, None)
-        # self.assertEqual(context['instance'], 'Test Slider')
+    def create_images(self, slider):
+        for n in range(1, 7):
+            image = self.create_filer_image_object()
+            slider_image = SliderImageFactory.create(
+                id=n,
+                image=image,
+                slider_id=slider.id)
+            self.assertEqual(str(slider_image), "test_file.jpg")
+
+    def setUp(self):
+        self.slider = SliderFactory.create()
+        self.create_images(self.slider)
 
     def test_plugin_html(self):
         placeholder = Placeholder.objects.create(slot='test')
+
         model_instance = add_plugin(
             placeholder,
             SlickSliderPlugin,
-            'de',
+            'de'
         )
+        model_instance.copy_relations(self.slider)
         renderer = ContentRenderer(request=RequestFactory())
         from sekizai.context import SekizaiContext
         html = renderer.render_plugin(model_instance, SekizaiContext())
-        self.assertIn('id="slider-wrapper"', html)
+        self.assertIn('class="slider-wrapper"', html)
+        self.assertIn('id="slider-%s' % model_instance.id, html)
