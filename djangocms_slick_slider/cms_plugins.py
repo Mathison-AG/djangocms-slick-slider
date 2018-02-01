@@ -8,8 +8,10 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 
 from .admin import SlickerSliderAceMixin
-from .models import SlickSlider, SlickSliderImage
+from .forms import SlickSliderForm
 from .helpers import get_slider_image_dimensions
+from .models import SlickSlider, SlickSliderImage
+
 
 
 class SlickSliderImageInline(admin.TabularInline):
@@ -31,6 +33,7 @@ class SlickSliderPlugin(SlickerSliderAceMixin, CMSPluginBase):
     Check :class:`helpers.get_slider_image_dimensions` for more information.
     """
     model = SlickSlider
+    form = SlickSliderForm
     name = _('Slick Slider')
     render_template = 'djangocms_slick_slider/base.html'
     cache = False
@@ -42,11 +45,11 @@ class SlickSliderPlugin(SlickerSliderAceMixin, CMSPluginBase):
 
         # define context vars
         images = instance.images.all()
-        child_width = get_slider_image_dimensions(
-            4)
+        child_width = get_slider_image_dimensions(4)
 
         context.update({
             'images': images,
-            'child_width': child_width})
+            'child_width': child_width}
+        )
 
         return context

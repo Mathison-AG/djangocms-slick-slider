@@ -9,8 +9,6 @@ from cms.models.pluginmodel import CMSPlugin
 from filer.fields.image import FilerImageField
 from jsonfield import JSONField
 
-from .settings import get_setting
-
 
 @python_2_unicode_compatible
 class SlickSlider(CMSPlugin):
@@ -28,7 +26,6 @@ class SlickSlider(CMSPlugin):
 
     settings = JSONField(
         verbose_name=_('slick settings'),
-        default=get_setting('SLICK_SLICKER_DEFAULT_OPTIONS'),
         blank=True,
         help_text=_(
             'Check <a href="http://kenwheeler.github.io/slick/" '
