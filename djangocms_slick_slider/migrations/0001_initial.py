@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('cmsplugin_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, related_name='djangocms_slick_slider_slickslider', serialize=False, to='cms.CMSPlugin')),
                 ('title', models.CharField(max_length=255, verbose_name='slider title')),
-                ('settings', jsonfield.fields.JSONField(default=b'{\n    "autoplay": true, \n    "autoplaySpeed": 1500, \n    "dots": true, \n    "mobileFirst": false, \n    "slidesToScroll": 1, \n    "slidesToShow": 2\n}', verbose_name='slick settings')),
+                ('settings', jsonfield.fields.JSONField(verbose_name='slick settings')),
                 ('arrow_color', models.CharField(default='#ddd', help_text='Define the color of slider arrows here. All CSS color values work (e.g. #efefef)', max_length=255, verbose_name='arrow color')),
             ],
             options={
