@@ -17,4 +17,3 @@ Contents:
    contributing
    authors
    history
-   changelog

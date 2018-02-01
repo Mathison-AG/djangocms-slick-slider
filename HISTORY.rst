@@ -3,6 +3,15 @@
 History
 -------
 
+0.5.0 (2018-02-01)
+++++++++++++++++++
+
+* Made title and settings not required anymore
+* Added support for multiple sliders on one page
+* Fixed bug, which made arrow color option not work
+* reworked the example project so you can use it with preconfigured data
+* changed default arrow color to a darker gray (:code:`#666`)
+
 0.2.4 (2017-10-13)
 ++++++++++++++++++
 
