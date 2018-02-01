@@ -25,6 +25,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='slickslider',
             name='settings',
-            field=jsonfield.fields.JSONField(default=b'{\n    "autoplay": true, \n    "autoplaySpeed": 1500, \n    "dots": true, \n    "mobileFirst": false, \n    "slidesToScroll": 1, \n    "slidesToShow": 2\n}', help_text='Check <a href="http://kenwheeler.github.io/slick/" target="_blank">Slick Documentation</a> for possible settings <br>Use JSON format and check the errors in the editor<br>You can also use online JSON validators', verbose_name='slick settings'),
+            field=jsonfield.fields.JSONField(blank=True, help_text='Check <a href="http://kenwheeler.github.io/slick/" target="_blank">Slick Documentation</a> for possible settings <br>Use JSON format and check the errors in the editor<br>You can also use online JSON validators', verbose_name='slick settings'),
         ),
     ]
