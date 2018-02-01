@@ -25,7 +25,16 @@
                 float: left;
                 width: 20%;
             }
+            .slider-wrapper {
+                margin-bottom:100px;
+            }
+            h1, h2 {
+                text-align: center;
+                padding-bottom: 20px;
+            }
         </style>
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
         {% render_block "css" %}
     </head>
     <body style="background-color: #eee">
@@ -39,6 +48,7 @@
         
         <script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"></script>
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         {% render_block "js" %}
     </body>
 </html>

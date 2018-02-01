@@ -10,11 +10,14 @@ from django.contrib.sitemaps.views import sitemap
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.static import serve
 
+from django.views.i18n import javascript_catalog
+
 admin.autodiscover()
 
 urlpatterns = [
     url(r'^sitemap\.xml$', sitemap,
         {'sitemaps': {'cmspages': CMSSitemap}}),
+    url(r'^jsi18n/(?P<packages>\S+?)/$', javascript_catalog),
 ]
 
 urlpatterns += i18n_patterns(
@@ -27,4 +30,4 @@ if settings.DEBUG:
     urlpatterns = [
         url(r'^media/(?P<path>.*)$', serve,
             {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
-        ] + staticfiles_urlpatterns() + urlpatterns
+    ] + staticfiles_urlpatterns() + urlpatterns

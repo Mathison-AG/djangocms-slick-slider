@@ -53,7 +53,7 @@ WSGI_APPLICATION = 'example.wsgi.application'
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'de'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'Europe/Berlin'
 
@@ -76,7 +76,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'example', 'static'),
 )
 SITE_ID = 1
-
 
 TEMPLATES = [
     {
@@ -155,10 +154,9 @@ INSTALLED_APPS = (
     'django_extensions',
 )
 
-LANGUAGES = (
-    ## Customize this
-    ('de', gettext('de')),
-)
+LANGUAGES = [
+    ('en', 'English'),
+]
 
 CMS_LANGUAGES = {
     ## Customize this
@@ -170,11 +168,11 @@ CMS_LANGUAGES = {
     1: [
         {
             'public': True,
-            'code': 'de',
+            'code': 'en',
             'hide_untranslated': False,
-            'name': gettext('de'),
+            'name': gettext('en'),
             'redirect_on_fallback': True,
-        },
+        }
     ],
 }
 

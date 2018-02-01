@@ -73,12 +73,15 @@ If you have virtualenvwrapper installed::
     cd example
     mkvirtualenv my_project_env
     pip install -r requirements.txt
-    python manage.py migrate
-    python manage.py createsuperuser
     python manage.py runserver
 
-Afterwards, you can login and create a first page on which you can
-use the ``Slick Slider`` plugin.
+Visit your homepage (usually http://localhost:8000).
+
+User: :code:`admin`
+Password: :code:`adminadmin`
+
+You should see some instances of the ``Slick Slider`` plugin. You can play around
+to see, how it works.
 
 
 Settings

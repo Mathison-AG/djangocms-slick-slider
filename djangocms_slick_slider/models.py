@@ -23,11 +23,13 @@ class SlickSlider(CMSPlugin):
 
     title = models.CharField(
         verbose_name=_('slider title'),
-        max_length=255)
+        max_length=255,
+        null=True, blank=True)
 
     settings = JSONField(
         verbose_name=_('slick settings'),
         default=get_setting('SLICK_SLICKER_DEFAULT_OPTIONS'),
+        blank=True,
         help_text=_(
             'Check <a href="http://kenwheeler.github.io/slick/" '
             'target="_blank">'
@@ -39,7 +41,7 @@ class SlickSlider(CMSPlugin):
     arrow_color = models.CharField(
         verbose_name=_('arrow color'),
         max_length=255,
-        default="#ddd",
+        default="#666",
         help_text=_('Define the color of slider arrows here. All CSS '
                     'color values work (e.g. #efefef).'))
 

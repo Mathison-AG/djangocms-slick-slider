@@ -14,8 +14,8 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/djangocms_slick_slider.css' %}">
 
     <style type="text/css">
-        .slick-prev:before,
-        .slick-next:before {
+        #slider-{{ instance.id }} .slick-prev:before,
+        #slider-{{ instance.id }} .slick-next:before {
             color: {{ instance.arrow_color }}!important;
         }
         .single-image img {
@@ -26,8 +26,8 @@
 
 {% endaddtoblock %}
 
-<div class="slider-wrapper" id="slider-{{ instance.id }}">
-    <div class="image-slider">
+<div class="slider-wrapper">
+    <div class="image-slider" id="slider-{{ instance.id }}">
         {# Loop over images we added to context #}
         {% for image in images %}
         <div class="single-image">
@@ -53,7 +53,7 @@
     <script type="text/javascript" src="{% static 'slick/slick.min.js' %}"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            $('.image-slider').slick({{ instance.settings|jsonify }});
+            $('#slider-{{ instance.id }}').slick({{ instance.settings|jsonify }});
         });
     </script>
 
