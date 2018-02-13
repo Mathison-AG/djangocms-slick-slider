@@ -26,7 +26,7 @@ class SlickSlider(CMSPlugin):
 
     settings = JSONField(
         verbose_name=_('slick settings'),
-        blank=True,
+        blank=True, null=True,
         help_text=_(
             'Check <a href="http://kenwheeler.github.io/slick/" '
             'target="_blank">'
