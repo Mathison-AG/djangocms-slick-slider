@@ -13,7 +13,6 @@ from .helpers import get_slider_image_dimensions
 from .models import SlickSlider, SlickSliderImage
 
 
-
 class SlickSliderImageInline(admin.TabularInline):
     model = SlickSliderImage
     extra = 1
@@ -37,19 +36,19 @@ class SlickSliderPlugin(SlickerSliderAceMixin, CMSPluginBase):
     name = _('Slick Slider')
     render_template = 'djangocms_slick_slider/base.html'
     cache = False
-    inlines = [SlickSliderImageInline, ]
+    inlines = [
+        SlickSliderImageInline,
+    ]
 
     def render(self, context, instance, placeholder):
-        context = super(SlickSliderPlugin, self).render(
-            context, instance, placeholder)
+        context = super(
+            SlickSliderPlugin,
+            self,
+        ).render(context, instance, placeholder)
 
         # define context vars
         images = instance.images.all()
         child_width = get_slider_image_dimensions(4)
 
-        context.update({
-            'images': images,
-            'child_width': child_width}
-        )
-
+        context.update({'images': images, 'child_width': child_width})
         return context

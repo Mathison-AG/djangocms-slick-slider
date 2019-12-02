@@ -52,3 +52,5 @@ example/media
 */*.db
 
 djangocms-slick-slider.sublime-project
+
+venv/

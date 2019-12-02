@@ -8,7 +8,6 @@
 {% load djangocms_slick_slider_utils %}
 
 {% addtoblock 'css' %}
-
     <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/djangocms_slick_slider.css' %}">
@@ -19,11 +18,15 @@
             color: {{ instance.arrow_color }}!important;
         }
         .single-image img {
-            width: 99%;
+            width: 100%;
             margin: 0 auto; /* it centers any block level element */
         }
+        {% if instance.full_width %}
+        #slider-{{ instance.id }} .slick-dots {
+          bottom: 0 !important;
+        }
+        {% endif %}
     </style>
-
 {% endaddtoblock %}
 
 <div class="slider-wrapper">
@@ -32,11 +35,15 @@
         {% for image in images %}
         <div class="single-image">
             {# Create image thumbnail, check link #}
-            {% thumbnail image.image child_width crop=False upscale=True as thumb %}
+            {% if instance.full_width %}
+              {% thumbnail image.image image.full_width_dimensions upscale=True as thumb %}
+            {% else %}
+              {% thumbnail image.image child_width crop=False upscale=True as thumb %}
+            {% endif %}
             {% if image.link %}<a href="{{ image.link }}" target="{{ image.link_target|yesno:"_blank," }}">{% endif %}
             <img data-lazy="{{ thumb.url }}">
             {% if image.link %}</a>{% endif %}
-            
+
             {# Add caption, if exists #}
             {% if image.caption_text %}
                 <div class="slider-caption-text">
