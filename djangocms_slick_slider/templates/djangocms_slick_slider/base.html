@@ -8,7 +8,6 @@
 {% load djangocms_slick_slider_utils %}
 
 {% addtoblock 'css' %}
-
     <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/djangocms_slick_slider.css' %}">
@@ -22,8 +21,12 @@
             width: 100%;
             margin: 0 auto; /* it centers any block level element */
         }
+        {% if instance.full_width %}
+        #slider-{{ instance.id }} .slick-dots {
+          bottom: 0 !important;
+        }
+        {% endif %}
     </style>
-
 {% endaddtoblock %}
 
 <div class="slider-wrapper">
