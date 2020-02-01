@@ -60,8 +60,9 @@ setup(
     include_package_data=True,
     install_requires=[
         'django-cms<3.8',
+        'django<3.0',
         'jsonfield',
-        'django-filer<1.6.0',
+        'django-filer<1.7.0',
     ],
     license="MIT",
     zip_safe=False,
