@@ -50,7 +50,7 @@ setup(
     name='djangocms-slick-slider',
     version=version,
     description="""A Django CMS Slider Plugin with Slick""",
-    long_description=readme + '\n\n' + history,
+    long_description=readme,
     author='Özer Sahin',
     author_email='o.sahin@oesah.de',
     url='https://github.com/oesah/djangocms_slick_slider',

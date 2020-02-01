@@ -1,6 +1,6 @@
-=============================
+==============================
 Django CMS Slick Slider Plugin
-=============================
+==============================
 
 .. image:: https://badge.fury.io/py/djangocms-slick-slider.svg
     :target: https://badge.fury.io/py/djangocms-slick-slider
