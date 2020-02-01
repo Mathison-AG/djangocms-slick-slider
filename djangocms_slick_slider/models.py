@@ -95,6 +95,7 @@ class SlickSliderImage(models.Model):
     image = FilerImageField(
         verbose_name=_('slider Image'),
         related_name='slider_images_filer',
+        on_delete=models.CASCADE,
     )
 
     link = models.URLField(
