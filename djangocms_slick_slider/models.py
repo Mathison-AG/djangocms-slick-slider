@@ -1,8 +1,4 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
 from cms.models.pluginmodel import CMSPlugin
@@ -10,7 +6,6 @@ from filer.fields.image import FilerImageField
 from jsonfield import JSONField
 
 
-@python_2_unicode_compatible
 class SlickSlider(CMSPlugin):
     """
     Main Plugin Model for the slider.
@@ -82,7 +77,6 @@ class SlickSlider(CMSPlugin):
         return "{title}".format(title=self.title)
 
 
-@python_2_unicode_compatible
 class SlickSliderImage(models.Model):
     """
     Image model für SlickSlider class.
@@ -95,6 +89,7 @@ class SlickSliderImage(models.Model):
     slider = models.ForeignKey(
         SlickSlider,
         related_name="images",
+        on_delete=models.CASCADE,
     )
 
     image = FilerImageField(
