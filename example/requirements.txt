@@ -6,4 +6,3 @@
 
 # Dev puposes
 django-extensions
-jsonfield
