@@ -128,6 +128,15 @@ Does the code actually work?
 If you have issues with different python versions, please take a look at
 these docs: https://www.holger-peters.de/using-pyenv-and-tox.html
 
+
+Release to PyPi
+---------------
+
+In the project root, run::
+
+    bump2version patch|minor|major
+    make release
+
 Credits
 -------
 
