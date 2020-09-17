@@ -61,7 +61,7 @@ setup(
     install_requires=[
         'django-cms<3.8',
         'django<3.0',
-        'jsonfield==2.1.1',
+        'jsonfield>=2.1.1',
         'django-filer<1.8.0',
     ],
     license="MIT",
