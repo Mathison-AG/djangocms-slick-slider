@@ -59,7 +59,7 @@ setup(
     ],
     include_package_data=True,
     install_requires=[
-        'django-cms<3.8',
+        'django-cms>=3.4',
         'django<3.0',
         'jsonfield>=2.1.1',
         'django-filer<1.8.0',
