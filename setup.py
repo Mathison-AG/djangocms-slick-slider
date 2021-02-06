@@ -68,8 +68,7 @@ setup(
     zip_safe=False,
     keywords='djangocms-slick-slider',
     classifiers=[
-        'Development Status :: 3 - Alpha',
-        'Framework :: Django',
+        'Development Status :: 5 - Production/Stable',
         'Framework :: Django :: 1.11',
         'Framework :: Django :: 2.0',
         'Framework :: Django :: 2.1',
@@ -82,7 +81,7 @@ setup(
         'Framework :: Django CMS :: 3.7',
         'Framework :: Django CMS :: 3.8',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
