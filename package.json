@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "release": "standard-version && make release && git push --follow-tags origin master"
+    "release": "make sdist && twine check dist/* && standard-version && make upload && git push --follow-tags origin master"
   },
   "devDependencies": {
     "standard-version": "^9.1.0"

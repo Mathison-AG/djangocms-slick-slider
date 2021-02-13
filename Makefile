@@ -55,6 +55,10 @@ release: clean ## package and upload a release
 	python setup.py sdist upload
 	twine upload dist/*
 
+upload: ## upload packge
+	python setup.py sdist upload
+	twine upload dist/*
+
 sdist: clean ## package
 	python setup.py sdist
 	ls -l dist
