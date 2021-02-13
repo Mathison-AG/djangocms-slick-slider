@@ -96,17 +96,16 @@ needs to be in ``static/vendor/`` folder with the appropriate folder name.
 If you want to upgrade, download and copy the new version into the before
 mentioned folder and change the version in the settings.
 
-default: ``1.8.0``
+Default: ``1.8.0``
 
 
 SLICK_SLICKER_DEFAULT_OPTIONS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can adjust the default options by setting `SLICK_SLICKER_DEFAULT_OPTIONS` to a dictionary.
+You can adjust the default options by setting ``SLICK_SLICKER_DEFAULT_OPTIONS`` to a dictionary.
 
-default::
+Default::
 
-    # these are the current defaults
     SLICK_SLICKER_DEFAULT_OPTIONS = {
         'dots': True,
         'slidesToShow': 2,
@@ -123,14 +122,14 @@ SLICK_SLIDER_ACE_THEME
 
 You can change the ACE theme of the edit field in the admin.
 
-default: ``json``
+Default: ``json``
 
 SLICK_SLIDER_ACE_MODE
 ^^^^^^^^^^^^^^^^^^^^^
 
 You can change the ACE mode of the edit field in the admin.
 
-default: ``github``
+Default: ``github``
 
 Running Tests
 -------------
