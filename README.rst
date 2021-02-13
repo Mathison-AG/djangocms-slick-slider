@@ -132,9 +132,23 @@ these docs: https://www.holger-peters.de/using-pyenv-and-tox.html
 Release to PyPi
 ---------------
 
-In the project root, run::
+For versioning, you need to have `standard-version` installed::
 
-    npm run release
+    yarn install
+
+
+Once you are ready and everything has been commited to git, you can run::
+
+    yarn run release
+
+
+This will:
+
+* Bump the version in the according files
+* Commit everything to git and create a git tag
+* Create a package for PyPi and upload it
+* Push everything to Git including tags
+
 
 Credits
 -------
