@@ -10,7 +10,6 @@ class SlickSlider(CMSPlugin):
     """
     Main Plugin Model for the slider.
     """
-
     class Meta:
         verbose_name = _('slick slider')
         verbose_name_plural = _('slick sliders')
@@ -81,10 +80,10 @@ class SlickSliderImage(models.Model):
     """
     Image model für SlickSlider class.
     """
-
     class Meta:
         verbose_name = _('slider image')
         verbose_name_plural = _('slider images')
+        ordering = ['position']
 
     slider = models.ForeignKey(
         SlickSlider,
@@ -114,6 +113,11 @@ class SlickSliderImage(models.Model):
         _('caption text'),
         null=True,
         blank=True,
+    )
+
+    position = models.IntegerField(
+        _('position'),
+        default=100,
     )
 
     def __str__(self):
