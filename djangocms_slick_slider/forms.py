@@ -12,5 +12,5 @@ class SlickSliderForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(SlickSliderForm, self).__init__(*args, **kwargs)
-        self.fields['settings'].initial = \
-            get_setting('SLICK_SLICKER_DEFAULT_OPTIONS')
+        self.fields['settings'].initial = get_setting(
+            'SLICK_SLICKER_DEFAULT_OPTIONS')
