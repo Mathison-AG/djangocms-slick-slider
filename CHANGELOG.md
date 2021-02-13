@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.5](https://github.com/oesah/djangocms_slick_slider/compare/v1.0.4...v1.0.5) (2021-02-13)
+
+
+### Bug Fixes
+
+* revert versioning in python for now ([b3b9f6b](https://github.com/oesah/djangocms_slick_slider/commit/b3b9f6bd180e440bd4be894aa3e99dbd4c3f306d))
+
 ### [1.0.4](https://github.com/oesah/djangocms_slick_slider/compare/v1.0.3...v1.0.4) (2021-02-13)
 
 
