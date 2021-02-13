@@ -184,7 +184,4 @@ Tools used in rendering this package:
 ToDos
 -----
 
-* make slider respect the order of ``SlickSliderImage`` Plugins
-* add more styling options to plugin
 * translations
-
