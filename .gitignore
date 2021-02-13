@@ -54,3 +54,5 @@ example/media
 djangocms-slick-slider.sublime-project
 
 venv/
+
+node_modules/
