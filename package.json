@@ -1,13 +1,13 @@
 {
   "name": "djangocms-slick-slider",
-  "version": "0.10.0",
+  "version": "0.9.4",
   "description": "Slick Slider for DjangoCMS",
   "repository": "https://github.com/oesah/djangocms_slick_slider",
   "author": "Özer Sahin",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "release": "standard-version"
+    "release": "standard-version && make release && git push --follow-tags origin master"
   },
   "devDependencies": {
     "standard-version": "^9.1.0"
