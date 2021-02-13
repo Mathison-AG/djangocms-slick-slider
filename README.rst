@@ -87,7 +87,7 @@ to see, how it works.
 Settings
 --------
 
-SLICK_SLIDER_VERSION
+``SLICK_SLIDER_VERSION``
 ^^^^^^^^^^^^^^^^^^^^
 
 Version of Slick Slider that should be used. Keep in mind, that this version
@@ -99,7 +99,7 @@ mentioned folder and change the version in the settings.
 Default: ``1.8.0``
 
 
-SLICK_SLICKER_DEFAULT_OPTIONS
+``SLICK_SLICKER_DEFAULT_OPTIONS``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can adjust the default options by setting ``SLICK_SLICKER_DEFAULT_OPTIONS`` to a dictionary.
@@ -117,14 +117,14 @@ Default::
 
 You can set any option that slick-slider offers. You can find them here: https://kenwheeler.github.io/slick/
 
-SLICK_SLIDER_ACE_THEME
+``SLICK_SLIDER_ACE_THEME``
 ^^^^^^^^^^^^^^^^^^^^^^
 
 You can change the ACE theme of the edit field in the admin.
 
 Default: ``json``
 
-SLICK_SLIDER_ACE_MODE
+``SLICK_SLIDER_ACE_MODE``
 ^^^^^^^^^^^^^^^^^^^^^
 
 You can change the ACE mode of the edit field in the admin.
