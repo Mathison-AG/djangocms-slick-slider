@@ -1,4 +1,10 @@
 {
+  "packageFiles": [
+    {
+      "filename": "package.json",
+      "type": "json"
+    }
+  ],
   "bumpFiles": [
     {
       "filename": "djangocms_slick_slider/version.json",
