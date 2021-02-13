@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.3](https://github.com/oesah/djangocms_slick_slider/compare/v1.0.2...v1.0.3) (2021-02-13)
+
+
+### Bug Fixes
+
+* add missing documentation for settings ([7055bdd](https://github.com/oesah/djangocms_slick_slider/commit/7055bdd3cb07f29ac06179fa55c3b03f56c6bc72))
+* formatting of json in ACE editor ([d166668](https://github.com/oesah/djangocms_slick_slider/commit/d166668da5cd449934c683baa5c13ba1d670c669))
+* make default options editable through settings ([45e7906](https://github.com/oesah/djangocms_slick_slider/commit/45e7906567d87d2fc085ab17bbb18a075be116ec))
+
 ### [1.0.2](https://github.com/oesah/djangocms_slick_slider/compare/v1.0.1...v1.0.2) (2021-02-13)
 
 
