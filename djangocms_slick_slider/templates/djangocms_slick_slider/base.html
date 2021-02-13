@@ -41,7 +41,7 @@
               {% thumbnail image.image child_width crop=False upscale=True as thumb %}
             {% endif %}
             {% if image.link %}<a href="{{ image.link }}" target="{{ image.link_target|yesno:"_blank," }}">{% endif %}
-            <img data-lazy="{{ thumb.url }}">
+            <img data-lazy="{{ thumb.url }}" alt="{{ image.image.default_alt_text }}">
             {% if image.link %}</a>{% endif %}
 
             {# Add caption, if exists #}
