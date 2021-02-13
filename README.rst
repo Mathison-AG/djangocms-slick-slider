@@ -134,8 +134,7 @@ Release to PyPi
 
 In the project root, run::
 
-    bump2version patch|minor|major
-    make release
+    npm run release
 
 Credits
 -------
