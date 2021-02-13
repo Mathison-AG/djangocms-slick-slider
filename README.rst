@@ -102,17 +102,35 @@ default: ``1.8.0``
 SLICK_SLICKER_DEFAULT_OPTIONS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-ToDo
+You can adjust the default options by setting `SLICK_SLICKER_DEFAULT_OPTIONS` to a dictionary.
+
+default::
+
+    # these are the current defaults
+    SLICK_SLICKER_DEFAULT_OPTIONS = {
+        'dots': True,
+        'slidesToShow': 2,
+        'mobileFirst': False,
+        'slidesToScroll': 1,
+        'autoplay': True,
+        'autoplaySpeed': 1500
+    }
+
+You can set any option that slick-slider offers. You can find them here: https://kenwheeler.github.io/slick/
 
 SLICK_SLIDER_ACE_THEME
 ^^^^^^^^^^^^^^^^^^^^^^
 
-ToDo
+You can change the ACE theme of the edit field in the admin.
+
+default: ``json``
 
 SLICK_SLIDER_ACE_MODE
 ^^^^^^^^^^^^^^^^^^^^^
 
-ToDo
+You can change the ACE mode of the edit field in the admin.
+
+default: ``github``
 
 Running Tests
 -------------
