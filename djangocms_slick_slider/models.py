@@ -59,6 +59,12 @@ class SlickSlider(CMSPlugin):
         help_text=_('Define max height of the slider.'),
     )
 
+    lazy_load_images = models.BooleanField(
+        verbose_name=_('lazy load images'),
+        help_text=_('Set to true if images should load lazily.'),
+        default=True,
+    )
+
     def copy_relations(self, oldinstance):
         """
         Take an instance and copy the images of that instance to this
