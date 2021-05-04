@@ -13,19 +13,29 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/djangocms_slick_slider.css' %}">
 
     <style type="text/css">
-        #slider-{{ instance.id }} .slick-prev:before,
-        #slider-{{ instance.id }} .slick-next:before {
-            color: {{ instance.arrow_color }}!important;
-        }
-        .single-image img {
-            width: 100%;
-            margin: 0 auto; /* it centers any block level element */
-        }
-        {% if instance.full_width %}
-        #slider-{{ instance.id }} .slick-dots {
-          bottom: 0 !important;
-        }
-        {% endif %}
+      #slider-{{ instance.id }} {
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 1s ease;
+          -webkit-transition: opacity 1s ease;
+      }
+      #slider-{{ instance.id }}.slick-initialized {
+        visibility: visible;
+        opacity: 1;    
+      }
+      #slider-{{ instance.id }} .slick-prev:before,
+      #slider-{{ instance.id }} .slick-next:before {
+          color: {{ instance.arrow_color }}!important;
+      }
+      .single-image img {
+          width: 100%;
+          margin: 0 auto; /* it centers any block level element */
+      }
+      {% if instance.full_width %}
+      #slider-{{ instance.id }} .slick-dots {
+        bottom: 0 !important;
+      }
+      {% endif %}
     </style>
 {% endaddtoblock %}
 
@@ -41,10 +51,10 @@
               {% thumbnail image.image child_width crop=False upscale=True as thumb %}
             {% endif %}
             {% if image.link %}<a href="{{ image.link }}" target="{{ image.link_target|yesno:"_blank," }}">{% endif %}
-            {% if instance.lazy_load_images %}
-            <img data-lazy="{{ thumb.url }}" alt="{{ image.image.default_alt_text }}">
-            {% else %}
+            {% if not instance.lazy_load_images or forloop.first %}
             <img src="{{ thumb.url }}" alt="{{ image.image.default_alt_text }}">
+            {% else %}
+            <img data-lazy="{{ thumb.url }}" alt="{{ image.image.default_alt_text }}">
             {% endif %}
             {% if image.link %}</a>{% endif %}
 
