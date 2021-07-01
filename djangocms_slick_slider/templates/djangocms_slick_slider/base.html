@@ -1,10 +1,8 @@
 {% load static %}
-
 {% load cms_tags %}
 {% load sekizai_tags %}
 {% load l10n %}
 {% load thumbnail %}
-
 {% load djangocms_slick_slider_utils %}
 
 {% addtoblock 'css' %}
@@ -69,12 +67,10 @@
 </div>
 
 {% addtoblock 'js' %}
-
     <script type="text/javascript" src="{% static 'slick/slick.min.js' %}"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $('#slider-{{ instance.id }}').slick({{ instance.settings|jsonify }});
         });
     </script>
-
 {% endaddtoblock %}
