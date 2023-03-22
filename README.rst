@@ -185,3 +185,8 @@ ToDos
 -----
 
 * translations
+
+Sponsorship
+-----------
+
+This project is maintained by `Mathison AG | Mobile & Web Development <https://mathison.ch>`_.
