@@ -5,8 +5,9 @@ from django.forms import Textarea
 from .models import SlickSliderImage
 from .settings import get_setting
 
+admin.site.register(SlickSliderImage)
 
-@admin.register(SlickSliderImage)
+
 class SlickerSliderAceMixin:
     change_form_template = "djangocms_slick_slider/change_form.html"
     text_area_attrs = {
