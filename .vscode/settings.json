@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "/Users/Zentrale/.pyenv/shims/python"
+  "python.pythonPath": "/Users/Zentrale/.pyenv/shims/python",
+  "python.analysis.typeCheckingMode": "basic"
 }
