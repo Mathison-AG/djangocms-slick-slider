@@ -22,6 +22,8 @@ jobs:
           - "3.7"
         os:
           - ubuntu-latest
+        django:
+          - "3.2"
     steps:
       - uses: actions/checkout@v3
         with:
