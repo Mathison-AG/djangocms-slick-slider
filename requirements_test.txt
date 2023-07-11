@@ -8,5 +8,6 @@ codecov>=2.0.0
 
 # Additional test requirements go here
 djangocms-text-ckeditor>=5.1.3
+djangocms-column>=2.0.0
 
 -e .
