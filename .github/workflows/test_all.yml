@@ -1,40 +1,26 @@
-name: check
+name: Run tests
+
 on:
   push:
   pull_request:
-  schedule:
-    - cron: "0 8 * * *"
-
-concurrency:
-  group: check-${{ github.ref }}
-  cancel-in-progress: true
+  workflow_dispatch:
 
 jobs:
-  test:
-    name: test with ${{ matrix.py }} on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+  build:
+    runs-on: ubuntu-20.04
     strategy:
-      fail-fast: false
       matrix:
-        py:
-          - "3.9"
-          - "3.8"
-          - "3.7"
-        os:
-          - ubuntu-latest
-        django:
-          - "3.2"
+        python-version: ["3.6", "3.7", "3.8", "3.9", "3.10", "3.11"]
+
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Setup python for test ${{ matrix.py }}
+      - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.py }}
-      - name: Install tox
-        run: python -m pip install tox-gh>=1.2
-      - name: Setup test suite
-        run: tox -vv --notest
-      - name: Run test suite
-        run: tox --skip-pkg-install
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install tox tox-gh-actions
+      - name: Run tests
+        run: tox -vv
