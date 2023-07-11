@@ -1,16 +1,15 @@
+from django.test import TestCase
 from django.test.client import RequestFactory
 
 from cms.api import add_plugin
 from cms.models import Placeholder
 from cms.plugin_rendering import ContentRenderer
-from djangocms_helper.base_test import BaseTestCase
-
 from djangocms_slick_slider.cms_plugins import SlickSliderPlugin
 
 from ._factories import SliderFactory, SliderImageFactory
 
 
-class SlickSliderPluginTests(BaseTestCase):
+class SlickSliderPluginTests(TestCase):
     def create_images(self, slider):
         for n in range(1, 7):
             image = self.create_filer_image_object()

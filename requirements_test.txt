@@ -6,4 +6,3 @@ codecov>=2.0.0
 
 # Additional test requirements go here
 django-coverage-plugin>=3.1.0
-djangocms-helper>=1.2.5

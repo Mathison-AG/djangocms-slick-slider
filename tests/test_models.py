@@ -1,13 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-"""
-test_djangocms-slick-slider
-------------
-
-Tests for `djangocms-slick-slider` models module.
-"""
-from djangocms_helper.base_test import BaseTestCase
+from django.test import TestCase
 
 from djangocms_slick_slider import settings
 from djangocms_slick_slider import apps
@@ -15,12 +6,9 @@ from djangocms_slick_slider import apps
 from ._factories import SliderFactory
 
 
-class SlickSliderModelTests(BaseTestCase):
-
+class SlickSliderModelTests(TestCase):
     def setUp(self):
-
-        self.assertEqual(apps.DjangocmsSlickSliderConfig.name,
-                         'djangocms_slick_slider')
+        self.assertEqual(apps.DjangocmsSlickSliderConfig.name, "djangocms_slick_slider")
 
         self.slider = SliderFactory.create()
 
