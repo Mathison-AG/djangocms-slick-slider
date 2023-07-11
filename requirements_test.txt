@@ -1,4 +1,1 @@
-mock
-django-coverage-plugin
-factory-boy
-django-app-helper
+
