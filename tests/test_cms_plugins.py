@@ -17,7 +17,7 @@ class SlickSliderPluginTests(CreateTestDataMixin, TestCase):
             slider_image = SliderImageFactory.create(
                 id=n, image=image, slider_id=slider.id
             )
-            self.assertEqual(str(slider_image), "test_file.jpg")
+            self.assertEqual(str(slider_image), "test_image.jpg")
 
     def setUp(self):
         self.slider = SliderFactory.create()
