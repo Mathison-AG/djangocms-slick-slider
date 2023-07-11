@@ -17,6 +17,3 @@ class SlickSliderModelTests(TestCase):
 
     def test_settings_default(self):
         self.assertEqual(self.slider.settings, settings.SLIDER_DEFAULT)
-
-    def tearDown(self):
-        pass
