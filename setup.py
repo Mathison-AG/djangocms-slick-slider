@@ -53,7 +53,7 @@ setup(
     ],
     include_package_data=True,
     install_requires=[
-        "django-cms>=3.10",
+        "django-cms>=3.4",
         "jsonfield",
         "django-filer",
     ],
