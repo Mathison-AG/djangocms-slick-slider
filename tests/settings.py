@@ -124,10 +124,6 @@ INSTALLED_APPS = (
     "treebeard",
     "filer",
     "easy_thumbnails",
-    "cmsplugin_filer_file",
-    "cmsplugin_filer_folder",
-    "cmsplugin_filer_image",
-    "cmsplugin_filer_utils",
     "djangocms_slick_slider",
 )
 
