@@ -55,6 +55,7 @@ setup(
     install_requires=[
         "django-cms>=3.9",
         "jsonfield",
+        "django-filer",
     ],
     license="MIT",
     zip_safe=False,
