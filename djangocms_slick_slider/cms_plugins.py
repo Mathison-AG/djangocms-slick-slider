@@ -1,8 +1,10 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals, division
-
+import django
 from django.contrib import admin
-from django.utils.translation import ugettext_lazy as _
+
+if django.VERSION >= (4, 0):
+    from django.utils.translation import gettext_lazy as _
+else:
+    from django.utils.translation import ugettext_lazy as _
 
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
@@ -31,10 +33,11 @@ class SlickSliderPlugin(SlickerSliderAceMixin, CMSPluginBase):
     You can define `SLICK_SLIDER_CONTAINER_WIDTH` to change the behaviors.
     Check :class:`helpers.get_slider_image_dimensions` for more information.
     """
+
     model = SlickSlider
     form = SlickSliderForm
-    name = _('Slick Slider')
-    render_template = 'djangocms_slick_slider/base.html'
+    name = _("Slick Slider")
+    render_template = "djangocms_slick_slider/base.html"
     cache = False
     inlines = [
         SlickSliderImageInline,
@@ -48,7 +51,13 @@ class SlickSliderPlugin(SlickerSliderAceMixin, CMSPluginBase):
 
         # define context vars
         images = instance.images.all()
-        child_width = get_slider_image_dimensions(4)
 
-        context.update({'images': images, 'child_width': child_width})
+        if instance.settings:
+            no_of_images = instance.settings.get("slidesToShow", 4)
+        else:
+            no_of_images = 4
+
+        child_width = get_slider_image_dimensions(no_of_images)
+
+        context.update({"images": images, "child_width": child_width})
         return context
